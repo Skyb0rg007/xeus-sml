@@ -15,8 +15,6 @@ include(CMakePackageConfigHelpers)
 # 
 #############################################################################
 
-option(XEUS_SML_BUILD_TESTS "Build xeus-sml tests" OFF)
-
 #############################################################################
 # 
 # Dependencies
