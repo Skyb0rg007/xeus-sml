@@ -22,12 +22,9 @@ Bindings for Xeus for Standard ML
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kernel.json
         DESTINATION ${CMAKE_INSTALL_DATADIR}/jupyter/kernels/${KERNEL_LANGUAGE}/kernel.json)
 
-    # Uses XEUS_SML_MLB
-    configure_file(lang.mlb.in lang.mlb)
-
     add_custom_command(
         OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/lang.0.o
-        COMMAND mlton -output lang lang.mlb
+        COMMAND mlton -output lang -mlb-path-var XEUS_SML ${XEUS_SML_PATH_MAP} lang.mlb
         DEPENDS ...)
     install(FILES lang DESTINATION ${CMAKE_INSTALL_BINDIR}/lang)
 

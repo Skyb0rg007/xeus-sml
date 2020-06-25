@@ -1,7 +1,7 @@
 
 @PACKAGE_INIT@
 
-set_and_check(XEUS_SML_MLB "@PACKAGE_CMAKE_INSTALL_LIBDIR@/xeus-sml/xeus-sml.mlb")
+set_and_check(XEUS_SML_PATH_MAP "@PACKAGE_CMAKE_INSTALL_LIBDIR@/xeus-sml")
 
 if(NOT TARGET xeus-sml AND NOT TARGET xeus)
     include("${CMAKE_CURRENT_LIST_DIR}/xeus-sml-targets.cmake")
