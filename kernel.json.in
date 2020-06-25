@@ -1,0 +1,9 @@
+{
+    "display_name": "@KERNEL_DISPLAY_NAME@",
+    "argv": [
+        "@KERNEL_EXECUTABLE_PATH@",
+        "-f",
+        "{connection_file}"
+    ],
+    "language": "@KERNEL_LANGUAGE@"
+}

@@ -1,0 +1,20 @@
+
+@PACKAGE_INIT@
+
+set_and_check(XEUS_SML_MLB "@PACKAGE_CMAKE_INSTALL_LIBDIR@/xeus-sml/xeus-sml.mlb")
+
+if(NOT TARGET xeus-sml AND NOT TARGET xeus)
+    include("${CMAKE_CURRENT_LIST_DIR}/xeus-sml-targets.cmake")
+endif()
+
+function(xeus_sml_create_kernel kernel_json)
+    if (NOT KERNEL_DISPLAY_NAME OR NOT KERNEL_EXECUTABLE_PATH OR NOT KERNEL_LANGUAGE)
+        message(FATAL_ERROR "Missing variables needed for creating a kernel.json")
+    endif()
+    configure_file(
+        "${CMAKE_CURRENT_LIST_DIR}/kernel.json.in"
+        "${kernel_json}")
+endfunction()
+
+check_required_components(xeus-sml)
+

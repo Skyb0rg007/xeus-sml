@@ -1,0 +1,17 @@
+(* vim: set ft=sml: *)
+
+local
+  $(SML_LIB)/basis/basis.mlb
+  $(SML_LIB)/basis/primitive/primitive.mlb
+  $(SML_LIB)/basis/build/sources.mlb
+
+  xeus.sml
+  ann "allowFFI true" in
+    xeus-impl.sml
+  end
+  xeus-kernel.fun
+in
+  signature XEUS_KERNEL
+  structure Xeus
+  functor XeusKernelFn
+end
